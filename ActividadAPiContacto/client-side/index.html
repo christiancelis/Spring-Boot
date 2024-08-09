@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Formulario</h1>
+        <section class="getdata">
+            <form id="formGetData">
+                <label for="f1">Consultar informacion contacto</label>
+                <input type="text" name="f1" id="f1">
+            </form>
+            <input class="btn" type="submit" name="btnget" id="btnget">
+        </section>
+        <div class="infouser disable">
+            <h3>Nombre:<span class="v1"></span></h3>
+            <h3>Apellido: <span class="v2"></span></h3>
+        </div>
+
+        <h1>Digite la informacion del usuario</h1>
+        <section class="Putdata">
+          
+            <form id="formPutInfo">
+                <div class="label-cont">
+                    <label for="idcont">id</label>
+                    <input type="text" name="idcont" id="idcont">
+                </div>
+                <div class="label-cont">
+                    <label for="nombrecont">Nombre</label>
+                    <input type="text" name="nombrecont" id="nombrecont">
+                </div>
+                <div class="label-cont">
+                    <label for="apellidocont">Apellido</label>
+                    <input type="text" name="apellidocont" id="apellidocont">
+                </div>
+            </form>
+            <input class="btn" type="submit" name="button2" id="button2">
+        </section>
+        <div class="msg">
+            <p></p>
+        </div>
+
+    </div>
+
+    <script src="./source.js"></script>
+
+</body>
+</html>

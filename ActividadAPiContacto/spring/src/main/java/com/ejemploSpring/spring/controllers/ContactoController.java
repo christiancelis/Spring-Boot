@@ -11,28 +11,40 @@ import java.util.Optional;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 
 @RestController
 @RequestMapping("/api")
 public class ContactoController {
 
-    @CrossOrigin(origins = "htt:")
+
+    @CrossOrigin(origins = "*")
     @GetMapping("/contacto/{idcontact}")
     public ContactoDTO  getContact(@PathVariable Integer idcontact) {
-        System.out.println(idcontact);
-
-        ArrayList <ContactoDTO> listaContactos = new ArrayList<>();
-        ContactoDTO contacto1  = new ContactoDTO(1,"pedro","pablo");
-        ContactoDTO contacto2  = new ContactoDTO(2,"pancracio","pinguino");
-        ContactoDTO contacto3  = new ContactoDTO(3,"anastacio","elefante");
-        listaContactos.add(contacto1);
-        listaContactos.add(contacto2);
-        listaContactos.add(contacto3);
-
-        Optional<ContactoDTO> info = listaContactos.stream().filter(e-> e.getId() == idcontact).findFirst();
-        return info.get(); 
+        ArrayList <ContactoDTO> lstcontacts = Controller.getInstance().listaContactos;
+        Optional<ContactoDTO> info = lstcontacts.stream().filter(e-> e.getId() == idcontact).findFirst();
+        if(info.isPresent()){
+            return info.get();
+        }else{
+            return null;
+        }
     }
 
+    @CrossOrigin(origins = "*")
+    @PostMapping("/contacto/add")
+    public ContactoDTO putContact(@RequestBody ContactoDTO contact) {
+        ArrayList <ContactoDTO> lstcontacts = Controller.getInstance().listaContactos;
+        Optional<ContactoDTO> info = lstcontacts.stream().filter(e-> e.getId() == contact.getId()).findFirst();
+        if(info.isPresent()){
+            return null;
+        }
+        else{
+            lstcontacts.add(contact);
+            return contact;
+        }
+    }
     
 }
