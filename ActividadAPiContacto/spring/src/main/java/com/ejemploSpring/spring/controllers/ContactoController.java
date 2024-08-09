@@ -17,12 +17,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/contacto")
 public class ContactoController {
 
 
     @CrossOrigin(origins = "*")
-    @GetMapping("/contacto/{idcontact}")
+    @GetMapping("/{idcontact}")
     public ContactoDTO  getContact(@PathVariable Integer idcontact) {
         ArrayList <ContactoDTO> lstcontacts = Controller.getInstance().listaContactos;
         Optional<ContactoDTO> info = lstcontacts.stream().filter(e-> e.getId() == idcontact).findFirst();
@@ -34,7 +34,7 @@ public class ContactoController {
     }
 
     @CrossOrigin(origins = "*")
-    @PostMapping("/contacto/add")
+    @PostMapping("/add")
     public ContactoDTO putContact(@RequestBody ContactoDTO contact) {
         ArrayList <ContactoDTO> lstcontacts = Controller.getInstance().listaContactos;
         Optional<ContactoDTO> info = lstcontacts.stream().filter(e-> e.getId() == contact.getId()).findFirst();
