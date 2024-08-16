@@ -3,8 +3,8 @@ package com.jpawebexample.japweb.domain.entities;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+
 
 @Entity
 public class Region {
@@ -16,8 +16,10 @@ public class Region {
     private String nameRegion;
 
     @ManyToOne
-    @JoinColumn(name = "codecountry_id")
-    private Country countries;
+    Country countries;
+
+
+    
 
     public Region() {
     }
@@ -37,5 +39,7 @@ public class Region {
     public void setNameRegion(String nameRegion) {
         this.nameRegion = nameRegion;
     }
+
+  
 
 }

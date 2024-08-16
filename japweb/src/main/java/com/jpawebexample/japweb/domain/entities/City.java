@@ -14,12 +14,11 @@ public class City {
     @Column(columnDefinition = "VARCHAR(50)",nullable = false)
     private String nameCity;
 
-    @ManyToOne
-    private Region region;
-
-
     public City() {
     }
+
+    @ManyToOne
+    Region region;
 
     public String getCodeCity() {
         return codeCity;
