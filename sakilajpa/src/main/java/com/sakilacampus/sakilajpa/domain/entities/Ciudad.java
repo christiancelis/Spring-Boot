@@ -1,7 +1,6 @@
 package com.sakilacampus.sakilajpa.domain.entities;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -16,7 +15,7 @@ import jakarta.persistence.Table;
 public class Ciudad {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_ciudad;
+    private Short id_ciudad;
 
     @Column(columnDefinition = "VARCHAR(20)", nullable=false)
     private String nombre;
@@ -30,11 +29,12 @@ public class Ciudad {
     public Ciudad() {
     }
 
-    public int getId_ciudad() {
+    
+    public Short getId_ciudad() {
         return id_ciudad;
     }
 
-    public void setId_ciudad(int id_ciudad) {
+    public void setId_ciudad(Short id_ciudad) {
         this.id_ciudad = id_ciudad;
     }
 
@@ -61,5 +61,8 @@ public class Ciudad {
     public void setUltima_actualizacion(LocalDateTime ultima_actualizacion) {
         this.ultima_actualizacion = ultima_actualizacion;
     }
+
+
+
 
 }

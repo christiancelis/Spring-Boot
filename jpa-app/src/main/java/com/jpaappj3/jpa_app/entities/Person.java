@@ -1,6 +1,7 @@
 package com.jpaappj3.jpa_app.entities;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -73,6 +74,7 @@ public class Person {
     }
 
     
-
+     @Embedded
+     Audit audit = new Audit();
 
 }
