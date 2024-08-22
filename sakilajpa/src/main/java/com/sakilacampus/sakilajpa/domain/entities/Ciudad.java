@@ -7,6 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
@@ -24,6 +25,7 @@ public class Ciudad {
     private LocalDateTime ultima_actualizacion;
 
     @ManyToOne
+    @JoinColumn(name = "id_pais", nullable = false)
     private Pais pais;
 
     public Ciudad() {

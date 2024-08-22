@@ -2,7 +2,7 @@ package com.sakilacampus.sakilajpa.domain.entities;
 
 import java.time.LocalDateTime;
 
-import org.hibernate.annotations.CollectionId;
+
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
